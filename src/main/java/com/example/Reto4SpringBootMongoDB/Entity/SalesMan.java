@@ -1,12 +1,10 @@
 package com.example.Reto4SpringBootMongoDB.Entity;
 
-import java.util.Date;
-
 public class SalesMan {
     private int id;
     private String identification;
     private String name;
-    private Date birthtDay;
+    private String birthtDay;
     private String monthBirthtDay;
     private String address;
     private String cellPhone;
@@ -18,7 +16,7 @@ public class SalesMan {
     public SalesMan() {
     }
 
-    public SalesMan(int id, String identification, String name, Date birthtDay, String monthBirthtDay,
+    public SalesMan(int id, String identification, String name, String birthtDay, String monthBirthtDay,
                     String address, String cellPhone, String email, String password, String zone, String type) {
         this.id = id;
         this.identification = identification;
@@ -59,11 +57,11 @@ public class SalesMan {
         this.name = name;
     }
 
-    public Date getBirthtDay() {
+    public String getBirthtDay() {
         return birthtDay;
     }
 
-    public void setBirthtDay(Date birthtDay) {
+    public void setBirthtDay(String birthtDay) {
         this.birthtDay = birthtDay;
     }
 

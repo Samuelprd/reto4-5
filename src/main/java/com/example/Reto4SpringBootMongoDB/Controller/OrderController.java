@@ -47,7 +47,13 @@ public class OrderController {
     @GetMapping("/date/{date}/{salesmanId}")
     public ResponseEntity<List<Order>> getOrdersByDateAndSalesman(@PathVariable String date,
                                                                   @PathVariable int salesmanId) {
-        List<Order> orders = orderService.getOrdersByDateAndSalesman(date, salesmanId);
+        List<Order> orders = orderService.findAllByRegisterDayAndSalesMan_Id(date, salesmanId);
+        return new ResponseEntity<>(orders, HttpStatus.OK);
+    }
+
+    @GetMapping("/date/{date}")
+    public ResponseEntity<List<Order>> getOrdersByDate(@PathVariable String date) {
+        List<Order> orders = orderService.getOrdersByDate(date);
         return new ResponseEntity<>(orders, HttpStatus.OK);
     }
 }

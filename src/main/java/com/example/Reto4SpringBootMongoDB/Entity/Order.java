@@ -3,13 +3,14 @@ package com.example.Reto4SpringBootMongoDB.Entity;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.Date;
 import java.util.Map;
 
 @Document(collection = "orders")
 public class Order {
     @Id
-    private String id;
-    private String registerDay;
+    private Integer id;
+    private Date registerDay;
     private String status;
     private SalesMan salesMan;
     private Map<String, Product> products;
@@ -18,7 +19,7 @@ public class Order {
     public Order() {
     }
 
-    public Order(String id, String registerDay, String status, SalesMan salesMan,
+    public Order(Integer id, Date registerDay, String status, SalesMan salesMan,
                  Map<String, Product> products, Map<String, Integer> quantities) {
         this.id = id;
         this.registerDay = registerDay;
@@ -30,19 +31,19 @@ public class Order {
 
     // Getters and setters
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public String getRegisterDay() {
+    public Date getRegisterDay() {
         return registerDay;
     }
 
-    public void setRegisterDay(String registerDay) {
+    public void setRegisterDay(Date registerDay) {
         this.registerDay = registerDay;
     }
 

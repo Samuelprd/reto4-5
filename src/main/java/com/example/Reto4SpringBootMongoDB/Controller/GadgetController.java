@@ -30,5 +30,4 @@ public class GadgetController {
         List<Gadget> gadgets = gadgetService.getAllGadgets();
         return new ResponseEntity<>(gadgets, HttpStatus.OK);
     }
-
 }
